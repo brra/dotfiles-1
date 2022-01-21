@@ -90,8 +90,8 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
     # Set language and text formats
     # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
     # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-    defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
-    defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
+    defaults write NSGlobalDomain AppleLanguages -array "en" "se"
+#    defaults write NSGlobalDomain AppleLocale -string "en_US@currency=EUR"
     defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
     defaults write NSGlobalDomain AppleMetricUnits -bool true
 
@@ -99,7 +99,7 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
     sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
     # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-    sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
+    sudo systemsetup -settimezone "Europe/Stockholm" > /dev/null
 
     # Stop iTunes from responding to the keyboard media keys
     launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
@@ -127,7 +127,7 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
 
     # Require password immediately after sleep or screen saver begins
     defaults write com.apple.screensaver askForPassword -int 1
-    defaults write com.apple.screensaver askForPasswordDelay -int 0
+    defaults write com.apple.screensaver askForPasswordDelay -int 10
 
     # Save screenshots to the desktop
     defaults write com.apple.screencapture location -string "${HOME}/Desktop"
