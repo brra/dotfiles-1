@@ -51,7 +51,7 @@
 
 On macOS (and Linux), run following command:
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ZhongXiLu/dotfiles/master/init.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/brra/dotfiles-1/master/init.sh)"
 ```
 On Windows, install programs with [winget](https://winget.run/):
 ```bash
@@ -64,32 +64,32 @@ As per usual, be wary that these are my dotfiles and not everything may be suita
 
 If you decide to fork this repo, here is a brief guide to help you navigate through all the files.
 
-- [`init.sh`](https://github.com/ZhongXiLu/dotfiles/blob/master/init.sh): The entrypoint script and will intialize everything.
-  - [L30-L32](https://github.com/ZhongXiLu/dotfiles/blob/master/init.sh#L30-L32): Git clone url, change to your own GitHub repo url.
-  - [L36-L38](https://github.com/ZhongXiLu/dotfiles/blob/master/init.sh#L36-L38): You could remove this part or change this to your own username if you use the [yadm encryption](https://yadm.io/docs/encryption) too (see yadm part).
-  - [L40-L42](https://github.com/ZhongXiLu/dotfiles/blob/master/init.sh#L40-L42): Git remote origin url, change to your own GitHub repo url.
-- [`Brewfile`](https://github.com/ZhongXiLu/dotfiles/blob/master/Brewfile): Lists all brew packages. You can replace this with your own one by running `brew bundle dump`.
-- [`.zshrc`](https://github.com/ZhongXiLu/dotfiles/blob/master/.zshrc): Pretty self-explanatory, you should probably replace this with yours too or modify it. Or if you use something else than zshell, you can remove this file and add yours.
-- [`.hushlogin`](https://github.com/ZhongXiLu/dotfiles/blob/master/.hushlogin): When this file is present, it will remove the "Last login: ..." message everytime a new terminal window is openend.
-- [`.simplebarrc`](https://github.com/ZhongXiLu/dotfiles/blob/master/.simplebarrc): Configuration for [simple-bar](https://github.com/Jean-Tinland/simple-bar). This needed to be in the `$HOME` directory.
-- [`winget.json`](https://github.com/ZhongXiLu/dotfiles/blob/master/winget.json): Winget "packages" (for Windows). You can safely remove this or you can replace this with your own too. To create a `winget.json` file, simply run `winget export --accept-source-agreements -o winget.json` on your Windows and it should export most installed packages.
-- [`.ssh`](https://github.com/ZhongXiLu/dotfiles/tree/master/.ssh): Ssh configuration, you can safely remove this.
-- [`.config`](https://github.com/ZhongXiLu/dotfiles/tree/master/.config):
-  - [`aliases`](https://github.com/ZhongXiLu/dotfiles/tree/master/.config/aliases): Bash aliases. I find it easier to manage them when they're all defined in one place. I then call them in my [`.zshrc`](https://github.com/ZhongXiLu/dotfiles/blob/master/.zshrc#L47).
-  - [`yabai`](https://github.com/ZhongXiLu/dotfiles/tree/master/.config/yabai): Note that the configuration as of now differs from the one in the screenshot above. Currently, I've disabled autotiling. If needed, you can remove [this line](https://github.com/ZhongXiLu/dotfiles/blob/master/.config/yabai/yabairc#L40) or even better, use your own `yabairc`.
-  - [`yadm`](https://github.com/ZhongXiLu/dotfiles/tree/master/.config/yadm):
-    - [`bootstrap`](https://github.com/ZhongXiLu/dotfiles/blob/master/.config/yadm/bootstrap): The yadm bootstrap script. This will basically (1) install Homebrew and your Brew packages, (2) switch to zshell, and (3) run some other bootstrap scripts located in the `bootstrap.d` directory (it will automatically run all the scripts in this directory).
-    - [`brew.sh`](https://github.com/ZhongXiLu/dotfiles/blob/master/.config/yadm/brew.sh): Simple helper script that will install Homebrew and your Brew packages.
-    - [`encrypt`](https://github.com/ZhongXiLu/dotfiles/blob/master/.config/yadm/encrypt): List of all the files that need to be encrypted on your machine and stored in your dotfiles repo. Obviously, change this to your own list if you want to use this too.
-    - [`archive`](https://github.com/ZhongXiLu/dotfiles/blob/master/.config/yadm/archive): File that contains all your encrypted files (that are listed in `encrypt`). You should remove this and again, if you want to store your own encrypted files in your repo, run `yadm encrypt --yadm-archive "$HOME/.config/yadm/archive"`.
-    - [`bootstrap.d`](https://github.com/ZhongXiLu/dotfiles/tree/master/.config/yadm/bootstrap.d): This directory contains additional bootstrap scripts that will further install tools and applications and/or configure them. If you don't use or recognise the tool or application, you should definitely just remove the file. For example, if you don't use [BetterDiscord](https://betterdiscord.app/), remove the `better-discord.sh` file. The scripts are also highly experimental, so it might even be the best to remove most or all of them if you don't know what you're doing. On the other hand, you can also add some of your own scripts here if you want to "bootstrap" some of your tools or applications.
+- [`init.sh`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/init.sh): The entrypoint script and will intialize everything.
+  - [L30-L32](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/init.sh#L30-L32): Git clone url, change to your own GitHub repo url.
+  - [L36-L38](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/init.sh#L36-L38): You could remove this part or change this to your own username if you use the [yadm encryption](https://yadm.io/docs/encryption) too (see yadm part).
+  - [L40-L42](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/init.sh#L40-L42): Git remote origin url, change to your own GitHub repo url.
+- [`Brewfile`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/Brewfile): Lists all brew packages. You can replace this with your own one by running `brew bundle dump`.
+- [`.zshrc`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/.zshrc): Pretty self-explanatory, you should probably replace this with yours too or modify it. Or if you use something else than zshell, you can remove this file and add yours.
+- [`.hushlogin`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/.hushlogin): When this file is present, it will remove the "Last login: ..." message everytime a new terminal window is openend.
+- [`.simplebarrc`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/.simplebarrc): Configuration for [simple-bar](https://github.com/Jean-Tinland/simple-bar). This needed to be in the `$HOME` directory.
+- [`winget.json`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/winget.json): Winget "packages" (for Windows). You can safely remove this or you can replace this with your own too. To create a `winget.json` file, simply run `winget export --accept-source-agreements -o winget.json` on your Windows and it should export most installed packages.
+- [`.ssh`](https://raw.githubusercontent.com/brra/dotfiles-1/tree/master/.ssh): Ssh configuration, you can safely remove this.
+- [`.config`](https://raw.githubusercontent.com/brra/dotfiles-1/tree/master/.config):
+  - [`aliases`](https://raw.githubusercontent.com/brra/dotfiles-1/tree/master/.config/aliases): Bash aliases. I find it easier to manage them when they're all defined in one place. I then call them in my [`.zshrc`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/.zshrc#L47).
+  - [`yabai`](https://raw.githubusercontent.com/brra/dotfiles-1/tree/master/.config/yabai): Note that the configuration as of now differs from the one in the screenshot above. Currently, I've disabled autotiling. If needed, you can remove [this line](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/.config/yabai/yabairc#L40) or even better, use your own `yabairc`.
+  - [`yadm`](https://raw.githubusercontent.com/brra/dotfiles-1/tree/master/.config/yadm):
+    - [`bootstrap`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/.config/yadm/bootstrap): The yadm bootstrap script. This will basically (1) install Homebrew and your Brew packages, (2) switch to zshell, and (3) run some other bootstrap scripts located in the `bootstrap.d` directory (it will automatically run all the scripts in this directory).
+    - [`brew.sh`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/.config/yadm/brew.sh): Simple helper script that will install Homebrew and your Brew packages.
+    - [`encrypt`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/.config/yadm/encrypt): List of all the files that need to be encrypted on your machine and stored in your dotfiles repo. Obviously, change this to your own list if you want to use this too.
+    - [`archive`](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/.config/yadm/archive): File that contains all your encrypted files (that are listed in `encrypt`). You should remove this and again, if you want to store your own encrypted files in your repo, run `yadm encrypt --yadm-archive "$HOME/.config/yadm/archive"`.
+    - [`bootstrap.d`](https://raw.githubusercontent.com/brra/dotfiles-1/tree/master/.config/yadm/bootstrap.d): This directory contains additional bootstrap scripts that will further install tools and applications and/or configure them. If you don't use or recognise the tool or application, you should definitely just remove the file. For example, if you don't use [BetterDiscord](https://betterdiscord.app/), remove the `better-discord.sh` file. The scripts are also highly experimental, so it might even be the best to remove most or all of them if you don't know what you're doing. On the other hand, you can also add some of your own scripts here if you want to "bootstrap" some of your tools or applications.
   - The other directories are just config files for other tools, applications, etc. If you see something you don't use or recognise, you can just remove it. Otherwise, verify if you want to keep the config files or want to modify them.
 
 # FAQ
 
 ### How do you add an image to neofetch?
 
-- You can change neofetch's config to use an image instead. You can find more info in their [wiki](https://github.com/dylanaraps/neofetch/wiki/Image-Backends). For example, I changed following variables in my [config.conf](https://github.com/ZhongXiLu/dotfiles/blob/master/.config/neofetch/config.conf#L691-L713) to show Gura in my neofetch:
+- You can change neofetch's config to use an image instead. You can find more info in their [wiki](https://github.com/dylanaraps/neofetch/wiki/Image-Backends). For example, I changed following variables in my [config.conf](https://raw.githubusercontent.com/brra/dotfiles-1/blob/master/.config/neofetch/config.conf#L691-L713) to show Gura in my neofetch:
 ```
 image_backend="iterm2"
 image_source="$HOME/.config/neofetch/gura.webp"
@@ -107,5 +107,5 @@ image_source="$HOME/.config/neofetch/gura.webp"
 
 ---
 
-If you got any more questions, feel free to create a [new issue](https://github.com/ZhongXiLu/dotfiles/issues/new), comment on [my reddit post](https://www.reddit.com/r/unixporn/comments/ot7thh/yabai_my_first_rice_on_macos/), or whatever mean you find to contact me.
+If you got any more questions, feel free to create a [new issue](https://raw.githubusercontent.com/brra/dotfiles-1/issues/new), comment on [my reddit post](https://www.reddit.com/r/unixporn/comments/ot7thh/yabai_my_first_rice_on_macos/), or whatever mean you find to contact me.
 Anyway, thanks for visiting my dotfiles. (◕◡◕✿)
