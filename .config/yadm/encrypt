@@ -1,5 +1,7 @@
-.config/aliases/.bosa_aliases
-.m2/settings.xml
-.ssh/id_*
+.ssh/*.key
+.ssh/authorized_keys
+.ssh/id_rsa
+.ssh/id_rsa.pub
 .ssh/known_hosts
+.ssh/Meisampem.pem
 .gitconfig
